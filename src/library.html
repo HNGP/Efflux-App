@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Efflux</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navBar">
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>Library</h1>
+                <button id="ted"> YT</button>
+            </div>
+            <div class="col-4">
+                <a href="/settings.html">
+                <img class="settings" src="img/settings.png" width="30px">
+                </a>
+            </div>
+        </div>
+    
+    <div class="row">
+        <div class="col-3">
+            <div class="thumbnail">
+                <a href="./video.html"></a>
+                <img src='./img/davincicode.jpg'>  
+            </div>
+        </div>
+        
+        
+        <div class="col-3">
+            <div  class="thumbnail">
+             
+                <img src='./img/ted2.jpg'>
+    
+            </div>
+        </div>
+       
+        <div class="col-3">
+            <div class="thumbnail">
+                <a href="./video.html">
+                <img src='./img/wardogs.jpg'>
+                </a>
+            </div>
+        </div>
+       
+        <div class="col-3">
+            <div class="thumbnail">
+                <a href="./video.html">
+                <img src='./img/kong.jpg'>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <div class="thumbnail">
+                <a href="./video.html">
+                <img src='./img/tebet.png'>
+                </a>
+            </div>
+        </div>
+    
+    
+        <div class="col-3">
+            <div class="thumbnail">
+                <a href="./video.html">
+                <img src='./img/manfromuncle.jpg'>
+                </a>
+            </div>
+        </div>
+    
+        <div class="col-3">
+            <div class="thumbnail">
+                <a href="./video.html">
+                <img src='./img/xmen5.jpeg'>
+                </a>
+            </div>
+        </div>
+    
+        <div class="col-3">
+            <div class="thumbnail">
+                <a href="./video.html">
+                <img src='./img/zsjl.jpg'>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+
+<script>
+    const button = document.getElementById('ted');
+        button.addEventListener('click', () => {
+            createBrowserWindow();
+    });
+    function createBrowserWindow() {
+        const remote = require('electron').remote;
+        const BrowserWindow = remote.BrowserWindow;
+        const win = new BrowserWindow({
+            height: 600,
+            width: 800
+            webPreferences: {
+                webSecurity: false,
+                nodeIntegration: true,
+            }
+        });
+
+        win.loadFile(path.join(__dirname, 'video.html'));
+    }
+
+</script>
+
+</html>
