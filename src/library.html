@@ -10,14 +10,14 @@
 </head>
 
 <body>
-    <div class="navBar">
-
+    <div id="navBar">
+        <a class="navbutton" href="./index.html"><button>BACK</button></a>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-8">
                 <h1>Library</h1>
-                <button id="ted"> YT</button>
+                
             </div>
             <div class="col-4">
                 <a href="/settings.html">
@@ -100,24 +100,7 @@
 
 
 <script>
-    const button = document.getElementById('ted');
-        button.addEventListener('click', () => {
-            createBrowserWindow();
-    });
-    function createBrowserWindow() {
-        const remote = require('electron').remote;
-        const BrowserWindow = remote.BrowserWindow;
-        const win = new BrowserWindow({
-            height: 600,
-            width: 800
-            webPreferences: {
-                webSecurity: false,
-                nodeIntegration: true,
-            }
-        });
-
-        win.loadFile(path.join(__dirname, 'video.html'));
-    }
+    
 
 </script>
 
