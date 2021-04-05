@@ -95,3 +95,11 @@ input:checked + .slider:before {
     display: flex;
     justify-content: space-between;
 }
+.navBar {
+  padding: 20px 10px;
+  -webkit-app-region: drag;
+}
+.navbutton {
+  top: 11%;
+  margin-left: 100px;
+}

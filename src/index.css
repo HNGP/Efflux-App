@@ -33,6 +33,13 @@ body {
 .navbutton {
   top: 11%;
   margin-left: 100px;
+  background: #f0f0f3;
+}
+
+#back {
+  border: 0;
+  border-radius: 5px;
+  background-color: #f0f0f3;
 }
 
 .settings {
@@ -105,4 +112,7 @@ li{
   list-style-type: none;
   padding: 10px ;
   
+}
+a {
+  text-decoration: none;
 }
