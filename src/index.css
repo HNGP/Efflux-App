@@ -101,3 +101,8 @@ a:hover {
   grid-template-columns: 240px auto;
   padding: 10px;
 }
+li{
+  list-style-type: none;
+  padding: 10px ;
+  
+}
