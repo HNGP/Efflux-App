@@ -15,7 +15,7 @@ const createWindow = () => {
     webPreferences: {
       webSecurity: false,
       nodeIntegration: true,
-      
+      webviewTag: true
     }
    
   });
@@ -26,6 +26,23 @@ const createWindow = () => {
   // Open the DevTools.
   //mainWindow.webContents.openDevTools();
 };
+
+createWindow.onload = () => {
+  const webview = document.querySelector("#webview")
+  const load = document.querySelector(".load")
+
+  webview.addEventListener("did-start-loading", () => {
+    load.innerHTML= 'Loading..'
+  })
+  
+  webview.addEventListener("did-stop-loading", () => {
+    load.innerHTML= 'Loading..'
+  })
+
+  webview.addEventListener("dom-ready", () => {
+    console.log("Ready");
+  })
+}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
