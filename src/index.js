@@ -10,18 +10,17 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 960,
-    height: 640,
+    width: 1920,
+    height: 1080,
     titleBarStyle: 'hiddenInset',
     webPreferences: {
       webSecurity: false,
       nodeIntegration: true,
       webviewTag: true
     }
-   
   });
 
-  // and load the index.html of the app.
+  mainWindow.removeMenu();
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
   exec('npm run server', (error, stdout, stderr) => {
     if (error) {
@@ -31,6 +30,8 @@ const createWindow = () => {
     console.log(`stdout: ${stdout}`);
     console.error(`stderr: ${stderr}`);
   });
+
+
 
   // Open the DevTools.
    //mainWindow.webContents.openDevTools();
@@ -54,14 +55,8 @@ createWindow.onload = () => {
   
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
 
-// Quit when all windows are closed, except on macOS. There, it's common
-// for applications and their menu bar to stay active until the user quits
-// explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
