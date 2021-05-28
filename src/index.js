@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const { exec } = require('child_process');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -22,6 +23,14 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  exec('npm run server', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.error(`stderr: ${stderr}`);
+  });
 
   // Open the DevTools.
    //mainWindow.webContents.openDevTools();
@@ -42,6 +51,7 @@ createWindow.onload = () => {
   webview.addEventListener("dom-ready", () => {
     console.log("Ready");
   })
+  
 }
 
 // This method will be called when Electron has finished
